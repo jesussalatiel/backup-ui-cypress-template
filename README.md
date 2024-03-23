@@ -89,9 +89,6 @@ $ cd ../path/to/to/the/file
   It is mandatory to configurate the environments variables on the local machine to run the automation framework. Make sure have installed [aws client](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) on your computer and generated [security credentials](https://us-east-1.console.aws.amazon.com/iamv2/home#/security_credentials?section=IAM_credentials) so you can run the following commands.
 
 ```.env
-CUSTOMERS_USER_POOL_ID,
-EMPLOYEES_USER_POOL_ID,
-B2C_CLIENT_ID,
 B2B_CLIENT_ID
 ```
 
@@ -150,4 +147,4 @@ We use as structure `[Ticket Code]: Ticket Description` to name a PR.
 
 ---
 
-IHFintech
+Jesus Salatiel
