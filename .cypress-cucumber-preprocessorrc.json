@@ -1,0 +1,17 @@
+{
+  "json": {
+    "enabled": false
+  },
+  "messages": {
+    "enabled": false
+  },
+  "html": {
+    "enabled": false
+  },
+  "suppressLogs": true,
+  "stepDefinitions": ["cypress/e2e/**/*.ts"],
+  "nonGlobalStepDefinitions": true,
+  "formatOptions": {
+    "usage": true
+  }
+}

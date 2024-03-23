@@ -1,0 +1,55 @@
+{
+  "name": "ihf-b2b-bo-qa",
+  "version": "1.0.0",
+  "description": "e2e",
+  "main": "index.js",
+  "scripts": {
+    "co:login": "aws codeartifact login --tool npm --repository qa --domain rivendell",
+    "prepare": "npm run co:login && husky ",
+    "cy:open": "npx cypress open  --e2e --browser chrome ",
+    "cy:run": "cypress run",
+    "cy:open:firefox": "npx cypress open  --e2e --browser firefox --env crossBrowser=true",
+    "cy:open:safari": "npx cypress open  --e2e --browser webkit --env crossBrowser=true",
+    "cy:open:electron": "npx cypress open  --e2e --browser electron --env crossBrowser=true",
+    "test:chrome": "npx cypress run  --e2e --browser chrome --env crossBrowser=true --env tags=\"@HappyPath\"",
+    "test:firefox": "npx cypress run  --e2e --browser firefox --env crossBrowser=true --env tags=\"@HappyPath\"",
+    "test:safari": "npx cypress run  --e2e --browser webkit --env crossBrowser=true --env tags=\"@HappyPath\"",
+    "test:electron": "npx cypress run  --e2e --browser electron --env crossBrowser=true --env tags=\"@HappyPath\"",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "npx eslint . --fix --ext .ts",
+    "compile": "tsc",
+    "test:ci": "npx cypress run --env tags=\"@HappyPath\""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.20.1",
+    "eslint": "8.57.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "18.0.0",
+    "eslint-plugin-cypress": "2.15.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "playwright-webkit": "1.42",
+    "prettier": "3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "3.523.0",
+    "@aws-sdk/client-dynamodb": "3.523.0",
+    "@aws-sdk/client-lambda": "3.523.0",
+    "@aws-sdk/client-s3": "3.523.0",
+    "@aws-sdk/lib-dynamodb": "3.523.0",
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.2",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@ihf-rivendell/qa": "0.3.67",
+    "@tsconfig/cypress": "1.0.1",
+    "cypress": "^13.6.6",
+    "cypress-parallel": "^0.14.0"
+  }
+}

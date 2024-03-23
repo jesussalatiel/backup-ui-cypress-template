@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "preserveValueImports": false,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "paths": {
+      "@badeball/cypress-cucumber-preprocessor/*": [
+        "./node_modules/@badeball/cypress-cucumber-preprocessor/dist/subpath-entrypoints/*"
+      ],
+      "@pages/*": ["cypress/e2e/pages/*"],
+      "@commands/*": ["src/automation/commands/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@tasks/*": ["src/automation/tasks/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "cypress/support/commands/**/*.ts",
+    "cypress/e2e/hooks/**/*.ts",
+    "src/automation/tasks/assets/processor/CypressBaseDataProcessor.ts",
+    "src/automation/tasks/assets/BuildReport.ts"
+  ]
+}
